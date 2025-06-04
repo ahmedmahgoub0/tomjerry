@@ -77,7 +77,7 @@ fun TopBar(
             Box(
                 modifier = Modifier
                     .padding(top = 4.dp)
-                    .size(41.dp)
+                    .size(40.dp)
                     .clip( RoundedCornerShape(12.dp))
                     .border(1.dp, Black.copy(alpha = 0.15f), RoundedCornerShape(12.dp))
                     .clickable { onNotificationClick() },

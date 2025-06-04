@@ -51,8 +51,9 @@ fun TomCard(
     modifier: Modifier = Modifier
 ) {
     Box(
-        modifier = modifier.fillMaxWidth()
-            .height(238.dp)
+        modifier = modifier
+            .fillMaxWidth()
+            .height(235.dp)
     ) {
         Box(
             modifier = Modifier
@@ -64,7 +65,7 @@ fun TomCard(
         )
         Column(
             modifier = Modifier
-                .height(238.dp)
+                .height(235.dp)
                 .padding(horizontal = 8.dp)
                 .padding(bottom = 8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -79,39 +80,6 @@ fun TomCard(
             )
         }
     }
-
-    /*
-    Column(
-        modifier = modifier.height(290.dp)
-    ) {
-        Box(
-            contentAlignment = Alignment.TopCenter
-        ) {
-            Image(
-                painter = painterResource(imageId),
-                contentDescription = null,
-                modifier = Modifier.zIndex(1f)
-            )
-            Column(
-                modifier = Modifier
-                    .padding(top = 16.dp)
-                    .clip(RoundedCornerShape(16.dp))
-                    .fillMaxSize()
-                    .background(White)
-                    .padding(horizontal = 8.dp),
-                verticalArrangement = Arrangement.Bottom,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Spacer(modifier = Modifier.weight(1f))
-                SpacerVertical8()
-
-                SpacerVertical8()
-            }
-        }
-    }
-
-     */
 }
 
 @Composable
@@ -123,7 +91,7 @@ fun CardInfo(
     Image(
         painter = painterResource(imageId),
         contentDescription = null,
-        modifier = Modifier.size(92.dp, 100.dp)
+        modifier = Modifier.size(93.dp, 100.dp)
     )
 
     SpacerVertical8()

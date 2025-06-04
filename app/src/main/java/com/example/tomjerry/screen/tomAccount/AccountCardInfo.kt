@@ -46,7 +46,7 @@ fun AccountCardInfo(
     Row(
         modifier = modifier
             .width(160.dp)
-            .height(57.dp)
+            .height(58.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(backgroundColor)
             .padding(vertical = 8.dp)

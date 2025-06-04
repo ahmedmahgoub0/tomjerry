@@ -81,39 +81,9 @@ fun TomKitchenScreen(modifier: Modifier = Modifier) {
             Column(
                 modifier = Modifier.padding(top = 40.dp, start = 16.dp)
             ) {
-                Row {
-                    Icon(
-                        painter = painterResource(R.drawable.ic_ruler),
-                        contentDescription = null,
-                        tint = White
-                    )
-                    SpacerHorizontal8()
-                    Text(
-                        text = "High Tension",
-                        fontFamily = IBM,
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
-                        color = White,
-                        letterSpacing = 0.5.sp
-                    )
-                }
+                TopIconAndText(R.drawable.ic_ruler, "High Tension")
                 SpacerVertical16()
-                Row {
-                    Icon(
-                        painter = painterResource(R.drawable.ic_chef),
-                        contentDescription = null,
-                        tint = White
-                    )
-                    SpacerHorizontal8()
-                    Text(
-                        text = "Shocking foods",
-                        fontFamily = IBM,
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
-                        color = White,
-                        letterSpacing = 0.5.sp
-                    )
-                }
+                TopIconAndText(R.drawable.ic_chef, "Shocking foods")
             }
 
             Column(
@@ -125,50 +95,7 @@ fun TomKitchenScreen(modifier: Modifier = Modifier) {
                     .padding(horizontal = 16.dp)
                     .padding(top = 32.dp)
             ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Column {
-                        Text(
-                            text = "Electric Tom pasta",
-                            fontFamily = IBM,
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 20.sp,
-                            color = Black87,
-                            lineHeight = 32.sp
-                        )
-                        SpacerVertical12()
-                        Row(
-                            modifier = Modifier
-                                .height(30.dp)
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(Green200)
-                                .padding(horizontal = 8.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.ic_money_bag),
-                                contentDescription = null,
-                                tint = Primary
-                            )
-                            Spacer(modifier = Modifier.width(2.dp))
-                            Text(
-                                text = "5 cheeses",
-                                fontFamily = IBM,
-                                fontWeight = FontWeight.Medium,
-                                fontSize = 12.sp,
-                                color = Primary
-                            )
-                        }
-                    }
-                    Icon(
-                        painter = painterResource(R.drawable.ic_favorite),
-                        contentDescription = null,
-                        tint = Primary
-                    )
-                }
+                MealDetails()
                 SpacerVertical8()
                 Text(
                     text = "Pasta cooked with a charger cable and sprinkled with questionable cheese. Make sure to unplug it before eating (or not, you decide).",
@@ -212,4 +139,75 @@ fun TomKitchenScreen(modifier: Modifier = Modifier) {
 @Preview(showSystemUi = true)
 fun TomKitchenScreenPreview() {
     TomKitchenScreen()
+}
+
+@Composable
+fun TopIconAndText(
+    iconId: Int,
+    title: String
+){
+    Row {
+        Icon(
+            painter = painterResource(iconId),
+            contentDescription = null,
+            tint = White
+        )
+        SpacerHorizontal8()
+        Text(
+            text = title,
+            fontFamily = IBM,
+            fontWeight = FontWeight.Medium,
+            fontSize = 16.sp,
+            color = White,
+            letterSpacing = 0.5.sp
+        )
+    }
+}
+
+@Composable
+fun MealDetails() {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Column {
+            Text(
+                text = "Electric Tom pasta",
+                fontFamily = IBM,
+                fontWeight = FontWeight.Medium,
+                fontSize = 20.sp,
+                color = Black87,
+                lineHeight = 32.sp
+            )
+            SpacerVertical12()
+            Row(
+                modifier = Modifier
+                    .height(30.dp)
+                    .clip(RoundedCornerShape(8.dp))
+                    .background(Green200)
+                    .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    painter = painterResource(R.drawable.ic_money_bag),
+                    contentDescription = null,
+                    tint = Primary
+                )
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    text = "5 cheeses",
+                    fontFamily = IBM,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 12.sp,
+                    color = Primary
+                )
+            }
+        }
+        Icon(
+            painter = painterResource(R.drawable.ic_favorite),
+            contentDescription = null,
+            tint = Primary
+        )
+    }
 }

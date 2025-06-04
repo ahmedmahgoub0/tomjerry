@@ -28,10 +28,7 @@ import com.example.tomjerry.ui.theme.IBM
 import com.example.tomjerry.ui.theme.Primary
 
 @Composable
-fun SearchBar(
-    onSearchClick: () -> Unit,
-    onFilterClick: () -> Unit,
-) {
+fun SearchBar() {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -41,7 +38,6 @@ fun SearchBar(
                 .weight(1f)
                 .clip(RoundedCornerShape(12.dp))
                 .background(White)
-                .clickable { onSearchClick() }
                 .padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -67,8 +63,7 @@ fun SearchBar(
             modifier = Modifier
                 .size(48.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .background(Primary)
-                .clickable { onFilterClick() },
+                .background(Primary),
             contentAlignment = Alignment.Center
         ) {
             Image(
@@ -82,5 +77,5 @@ fun SearchBar(
 @Composable
 @Preview(showBackground = true)
 fun SearchBarPreview() {
-    SearchBar({ }) { }
+    SearchBar()
 }

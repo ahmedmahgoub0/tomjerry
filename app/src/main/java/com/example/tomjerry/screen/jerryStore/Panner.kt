@@ -19,9 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.White
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,12 +27,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tomjerry.R
 import com.example.tomjerry.composable.SpacerVertical8
-import com.example.tomjerry.ui.theme.Green300
-import com.example.tomjerry.ui.theme.Grey500
 import com.example.tomjerry.ui.theme.IBM
 import com.example.tomjerry.ui.theme.Linear1
 import com.example.tomjerry.ui.theme.Linear2
-import com.example.tomjerry.ui.theme.Red200
 import com.example.tomjerry.ui.theme.White4
 
 @Composable
@@ -48,6 +43,7 @@ fun Panner() {
             modifier = Modifier
                 .padding(top = 16.dp)
                 .fillMaxWidth()
+                .height(92.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(
                     brush = Brush.horizontalGradient(colors = listOf(Linear1, Linear2))
@@ -56,7 +52,6 @@ fun Panner() {
         ) {
             Column(
                 modifier = Modifier
-                    .height(92.dp)
             ) {
                 Text(
                     text = "Buy 1 Tom and get 2 for free",
@@ -78,26 +73,6 @@ fun Panner() {
                 )
             }
         }
-        /*
-        //            Box(
-        //                modifier = Modifier
-        //                    .align(Alignment.BottomEnd)
-        //                    .size(94.dp)
-        //                    .clip(RectangleShape)
-        //                    .clip(RoundedCornerShape(topStart = 50.dp, bottomStart = 26.dp))
-        //                    .background(White.copy(alpha = 0.04f))
-        //                    .padding(start = 24.dp)
-        //            )
-        //            Box(
-        //                modifier = Modifier
-        //                    .align(Alignment.BottomEnd)
-        //                    .size(88.dp)
-        //                    .clip(RectangleShape)
-        //                    .clip(RoundedCornerShape(topStart = 50.dp, bottomStart = 30.dp))
-        //                    .background(White.copy(alpha = 0.04f))
-        //                    .padding(start = 24.dp)
-        //            )
-        */
         Image(
             painter = painterResource(R.drawable.tom_with_money),
             contentDescription = null,
@@ -127,6 +102,6 @@ fun Panner() {
 
 @Composable
 @Preview
-fun PannerPreview(){
+fun PannerPreview() {
     Panner()
 }

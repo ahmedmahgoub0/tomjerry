@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Scaffold { paddingValues ->
-                JerryStoreScreen(modifier = Modifier.padding(paddingValues))
+                TomAccountScreen(modifier = Modifier.padding(paddingValues))
             }
         }
     }

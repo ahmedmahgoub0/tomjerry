@@ -37,7 +37,7 @@ val White12 = Color(0x1FFFFFFF)
 val Red200 = Color(0xFFF2D9E7)
 val Orange200 = Color(0xFFFAEDCF)
 val Yellow = Color(0xFFFFBF1A)
-val Reddy = Color(0xFFF46983)
+val Red700 = Color(0xFFF46983)
 val Green = Color(0xFF57AB0F)
 
 val Grey500 = Color(0x14001A1F)

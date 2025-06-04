@@ -64,45 +64,12 @@ fun JerryStoreScreen(
     ) {
         TopBar { }
         SpacerVertical12()
-        SearchBar({ }) { }
-        SpacerVertical8()
+        SearchBar()
+        SpacerVertical24()
         Panner()
         SpacerVertical24()
 
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "Cheap tom section",
-                color = Black,
-                fontFamily = IBM,
-                fontWeight = FontWeight.SemiBold,
-                fontSize = 20.sp
-            )
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .clip(RoundedCornerShape(8.dp))
-                    .clickable { }
-            ) {
-                Text(
-                    text = "View all",
-                    color = Primary,
-                    fontFamily = IBM,
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 12.sp
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Icon(
-                    painter = painterResource(R.drawable.ic_arrow_right),
-                    contentDescription = null,
-                    tint = Primary
-                )
-            }
-        }
+        CheapTomSection()
 
         SpacerVertical16()
 
@@ -178,8 +145,6 @@ fun JerryStoreScreen(
                 priceAfter = "10"
             )
         }
-
-        SpacerVertical16()
     }
 }
 
@@ -189,5 +154,41 @@ fun JerryStoreScreen(
 fun JerryStorePreview() {
     Scaffold { paddingValues ->
         JerryStoreScreen(modifier = Modifier.padding(paddingValues))
+    }
+}
+
+
+@Composable
+fun CheapTomSection() {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = "Cheap tom section",
+            color = Black,
+            fontFamily = IBM,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 20.sp
+        )
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = "View all",
+                color = Primary,
+                fontFamily = IBM,
+                fontWeight = FontWeight.Medium,
+                fontSize = 12.sp
+            )
+            Spacer(modifier = Modifier.width(4.dp))
+            Icon(
+                painter = painterResource(R.drawable.ic_arrow_right),
+                contentDescription = null,
+                tint = Primary
+            )
+        }
     }
 }
